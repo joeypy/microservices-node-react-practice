@@ -6,6 +6,7 @@ import { CommentList } from "./CommentList";
 interface Comments {
   id: string;
   content: string;
+  status: string;
 }
 interface PostResponse {
   [key: string]: {
