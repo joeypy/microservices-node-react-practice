@@ -14,17 +14,18 @@ spec:
     spec:
       containers:
         - name: client
-          image: joeypy137/client:latest
+          image: joeypy137/client
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
   name: client-srv
 spec:
-  type: ClusterIP
   selector:
     app: client
-  ports: 
+  ports:
     - name: client
       protocol: TCP
       port: 3000

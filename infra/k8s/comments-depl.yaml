@@ -14,17 +14,16 @@ spec:
     spec:
       containers:
         - name: comments
-          image: joeypy137/comments:latest
+          image: joeypy137/comments
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: comments-srv
 spec:
-  type: ClusterIP
   selector:
     app: comments
-  ports: 
+  ports:
     - name: comments
       protocol: TCP
       port: 4001

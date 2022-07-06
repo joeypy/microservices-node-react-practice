@@ -14,14 +14,13 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: joeypy137/moderation:latest
+          image: joeypy137/moderation
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: moderation-srv
 spec:
-  type: ClusterIP
   selector:
     app: moderation
   ports:

@@ -1,12 +1,16 @@
-import { FormEvent, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-export const PostCreate = () => {
+const PostCreate = () => {
   const [title, setTitle] = useState("");
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
-    await axios.post("http://posts.com/posts/create", { title });
+
+    await axios.post("http://posts.com/posts/create", {
+      title,
+    });
+
     setTitle("");
   };
 
@@ -14,13 +18,11 @@ export const PostCreate = () => {
     <div>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="">Title</label>
+          <label>Title</label>
           <input
-            type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="form-control"
-            style={{ marginBottom: "10px" }}
           />
         </div>
         <button className="btn btn-primary">Submit</button>
@@ -28,3 +30,4 @@ export const PostCreate = () => {
     </div>
   );
 };
+export default PostCreate;

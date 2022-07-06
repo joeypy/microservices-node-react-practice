@@ -14,14 +14,13 @@ spec:
     spec:
       containers:
         - name: query
-          image: joeypy137/query:latest
+          image: joeypy137/query
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: query-srv
 spec:
-  type: ClusterIP
   selector:
     app: query
   ports:
