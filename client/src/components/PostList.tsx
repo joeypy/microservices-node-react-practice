@@ -21,7 +21,7 @@ export const PostList = () => {
 
   const fetchPost = async () => {
     const { data } = await axios.get<PostResponse>(
-      "http://localhost:4002/posts"
+      "http://posts.com/posts"
     );
     setPosts(data);
   };
